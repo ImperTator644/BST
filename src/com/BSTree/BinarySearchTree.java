@@ -1,5 +1,6 @@
 package com.BSTree;
 
+
 import java.util.ArrayList;
 
 /**
@@ -230,6 +231,21 @@ public class BinarySearchTree extends BinaryTree implements BSTree<BNode>{
         setRoot(null);
     }
 
+
+    /**
+     * Compares to trees
+     * @param thisNode root of the first tree to compare
+     * @param otherNode root of the second tree to compare
+     * @return true if trees are equal, false if they are not
+     */
+    private boolean compareTrees(BNode thisNode, BNode otherNode){
+        if(thisNode == null && otherNode == null) return true;
+        if(thisNode == null || otherNode == null) return false;
+        if(!thisNode.equals(otherNode)) return false;
+        return (compareTrees(thisNode.getLeft(),otherNode.getLeft())
+                && compareTrees(thisNode.getRight(),otherNode.getRight()));
+    }
+
     /**
      * TASK NUMBER 3
      * Checks, if two Binary Search Trees are equal
@@ -242,7 +258,7 @@ public class BinarySearchTree extends BinaryTree implements BSTree<BNode>{
         if(otherObject == null) return false;
         if(this.getClass() != otherObject.getClass()) return false;
         var other = (BinarySearchTree) otherObject;
-        return (this.toString().equals(other.toString()));
+        return (compareTrees(this.getRoot(), other.getRoot()));
     }
 
     /**
