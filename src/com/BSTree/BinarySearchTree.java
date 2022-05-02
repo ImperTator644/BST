@@ -232,7 +232,7 @@ public class BinarySearchTree extends BinaryTree implements BSTree<BNode>{
 
     /**
      * TASK NUMBER 3
-     * Checks, if to Binary Search Trees are equal
+     * Checks, if two Binary Search Trees are equal
      * @param otherObject another binary search tree
      * @return true, if they are equal, false if they are not
      */
@@ -247,7 +247,7 @@ public class BinarySearchTree extends BinaryTree implements BSTree<BNode>{
 
     /**
      *
-     * @return String representing the tree
+     * @return String representing the tree (inorder)
      */
     @Override
     public String toString(){
