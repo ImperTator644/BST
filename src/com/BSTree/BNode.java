@@ -103,10 +103,7 @@ public class BNode implements Node<BNode> {
         if(this.getClass() != other.getClass()) return false;
         var otherObject = (BNode) other;
 
-        return (Objects.equals(this.getLeft(), otherObject.getLeft())
-                && Objects.equals(this.getRight(), otherObject.getRight())
-                && Objects.equals(this.getParent(), otherObject.getParent())
-                && this.getValue() == otherObject.getValue());
+        return (this.getValue() == otherObject.getValue());
     }
 
     /**
